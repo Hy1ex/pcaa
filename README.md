@@ -14,6 +14,3 @@ This plugin allows the admin to set sv_airaccelerate value per Client.
 | --- | --- |
 | **sm_pcaa_adminflag** | ``Admin flag for PCAA panel/menu access.`` |
 | **sm_pcaa** | ``Opens PCAA management menu.`` |
-
-## Todo
-- Grow the convar database
