@@ -15,10 +15,10 @@ This plugin allows the admin to set sv_airaccelerate value per Client.
 | **sm_pcaa_adminflag** | ``Admin flag for PCAA panel/menu access.`` |
 | **sm_pcaa** | ``Opens PCAA management menu.`` |
 
-# Todo
+## Todo
 - Probably fix the lastest version of multicolors and switch the current one for that but for now it works fine.
 
-# Note
+## Note
 You must use the MultiColors the special version that is included in source code
 to compile because I'm to lazy to make a proper fix for MultiColors. Don't think so much 
 special version is nothing big it's the same as included in client api plugin but some lines in code
