@@ -189,7 +189,7 @@ stock void CReplyToCommand(int author, const char[] message, any ...)
 	VFormat(buffer, sizeof(buffer), message, 3);
 
 	C_ReplyToCommand(author, "%s%s", g_sPrefix, buffer);
-	MC_ReplyToCommand(author, "%s%s", g_sPrefix, buffer);
+//	MC_ReplyToCommand(author, "%s%s", g_sPrefix, buffer);
 }
 
 

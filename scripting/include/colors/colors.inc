@@ -53,9 +53,6 @@ bool CEventIsHooked = false;
  */
 stock void C_PrintToChat(int client, const char[] szMessage, any:...)
 {
-	if (CM_IsClientModUser(client, true))
-		return;
-	
 	if (client <= 0 || client > MaxClients)
 		ThrowError("Invalid client index %d", client);
 	
@@ -80,9 +77,6 @@ stock void C_PrintToChat(int client, const char[] szMessage, any:...)
 
 stock void C_ReplyToCommand(int client, const char[] szMessage, any:...)
 {
-	if (CM_IsClientModUser(client, true))
-		return;
-	
 	char szCMessage[MAX_MESSAGE_LENGTH];
 	VFormat(szCMessage, sizeof(szCMessage), szMessage, 3);
 	

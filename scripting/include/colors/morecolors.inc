@@ -37,9 +37,6 @@ static Handle sm_show_activity = INVALID_HANDLE;
  * On error/Errors:		If the client is not connected an error will be thrown.
  */
 stock void MC_PrintToChat(int client, const char[] message, any ...) {
-	if (!CM_IsClientModUser(client, true))
-		return;
-	
 	MC_CheckTrie();
 	if(client <= 0 || client > MaxClients) {
 		ThrowError("Invalid client index %i", client);
@@ -406,9 +403,6 @@ stock void MC_RemoveTags(char[] message, int maxlen) {
  * @param message		Message (formatting rules)
  */
 stock void MC_ReplyToCommand(int client, const char[] message, any ...) {
-	if (!CM_IsClientModUser(client, true))
-		return;
-	
 	char buffer[MAX_BUFFER_LENGTH];
 	SetGlobalTransTarget(client);
 	VFormat(buffer, sizeof(buffer), message, 3);

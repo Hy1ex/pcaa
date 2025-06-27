@@ -132,7 +132,7 @@ public Action Command_PCAA(int client, int args)
     {
         if (!CheckCommandAccess(client, "sm_pcaa", ADMFLAG_GENERIC))
         {
-            CReplyToCommand(client, "[{blue}PCAA{default}] You don't have access to this command");
+            CReplyToCommand(client, "[{green}PCAA{default}] You don't have access to this command");
             return Plugin_Handled;
         }
         
@@ -142,7 +142,7 @@ public Action Command_PCAA(int client, int args)
     
     if (args != 2)
     {
-        CReplyToCommand(client, "[{blue}PCAA{default}] Usage: sm_pcaa <target> <value>");
+        CReplyToCommand(client, "[{green}PCAA{default}] Usage: sm_pcaa <target> <value>");
         return Plugin_Handled;
     }
     
@@ -171,7 +171,7 @@ public Action Command_PCAA(int client, int args)
     if (iTargetCount <= 0)
     {
         // Custom error handling to avoid translation issues
-        CReplyToCommand(client, "[{blue}PCAA{default}] No matching players found");
+        CReplyToCommand(client, "[{green}PCAA{default}] No matching players found");
         return Plugin_Handled;
     }
     
@@ -232,7 +232,7 @@ public int PlayerMenuHandler(Menu menu, MenuAction action, int client, int param
     int target = GetClientOfUserId(StringToInt(sUserID));
     if (!target || !IsClientInGame(target))
     {
-        CReplyToCommand(client, "[{blue}PCAA{default}] Player is no longer available");
+        CReplyToCommand(client, "[{green}PCAA{default}] Player is no longer available");
         return 0;
     }
     
@@ -246,7 +246,7 @@ void ShowValueMenu(int client)
     int target = g_iMenuTarget[client];
     if (!target || !IsClientInGame(target))
     {
-        CReplyToCommand(client, "[{blue}PCAA{default}] Player is no longer available");
+        CReplyToCommand(client, "[{green}PCAA{default}] Player is no longer available");
         return;
     }
     
@@ -285,7 +285,7 @@ public int ValueMenuHandler(Menu menu, MenuAction action, int client, int param2
     int target = g_iMenuTarget[client];
     if (!target || !IsClientInGame(target))
     {
-        CReplyToCommand(client, "[{blue}PCAA{default}] Player is no longer available");
+        CReplyToCommand(client, "[{green}PCAA{default}] Player is no longer available");
         return 0;
     }
     
@@ -294,7 +294,7 @@ public int ValueMenuHandler(Menu menu, MenuAction action, int client, int param2
     
     if (StrEqual(sInfo, "custom"))
     {
-        CPrintToChat(client, "[{blue}PCAA{default}] Enter custom value in console:");
+        CPrintToChat(client, "[{green}PCAA{default}] Enter custom value in console:");
         PrintToConsole(client, "sm_pcaa \"%N\" <value>", target);
         ShowValueMenu(client);  // Reopen menu
         return 0;
