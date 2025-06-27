@@ -186,7 +186,7 @@ public Action Command_PCAA(int client, int args)
         SetClientCookie(iTarget, g_hCookie, sCookieValue);
     }
     
-    CShowActivity2(client, "[{blue}PCAA{default}] ", "Set sv_airaccelerate to %.1f for %s", fValue, sTargetName);
+    ShowActivity2(client, "[PCAA] ", "Set sv_airaccelerate to %.1f for %s", fValue, sTargetName);
     return Plugin_Handled;
 }
 
@@ -308,7 +308,7 @@ public int ValueMenuHandler(Menu menu, MenuAction action, int client, int param2
     FloatToString(fValue, sCookieValue, sizeof(sCookieValue));
     SetClientCookie(target, g_hCookie, sCookieValue);
     
-    CShowActivity2(client, "[{blue}PCAA{default}] ", "Set %N's sv_airaccelerate to %.1f", target, fValue);
+    ShowActivity2(client, "[PCAA] ", "Set %N's sv_airaccelerate to %.1f", target, fValue);
     ShowValueMenu(client);  // Reopen menu with new value
     return 0;
 }
